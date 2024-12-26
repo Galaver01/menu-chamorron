@@ -45,9 +45,11 @@
         }
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             padding: 20px;
+            width: 100%;
+            max-width: 1200px;
         }
         .menu-category {
             background: #fff;
@@ -61,29 +63,27 @@
             font-size: 1.5rem;
         }
         .menu-item {
-            position: relative;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
             border-radius: 10px;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .menu-item:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .menu-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            transition: opacity 0.3s ease;
-        }
-        .menu-item:hover img {
-            opacity: 0.7;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
         }
         .menu-item h3 {
-            margin: 10px 0;
+            margin: 0;
             font-size: 1rem;
             color: #222;
-            position: relative;
         }
         .menu-item h3 span {
             float: right;
@@ -93,61 +93,28 @@
         .menu-item p {
             font-size: 0.9rem;
             color: #555;
-            margin: 0;
-        }
-        .menu-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 87, 51, 0.3);
-            z-index: 1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .menu-item:hover::before {
-            opacity: 1;
-        }
-        .menu-item h3,
-        .menu-item p {
-            position: relative;
-            z-index: 2;
-        }
-        /* Estilos para dispositivos móviles */
-        @media screen and (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav a {
-                margin: 10px 0;
-            }
-            .menu-item img {
-                width: 100px;
-                height: 100px;
-            }
+            margin: 5px 0 0;
         }
         .button-container {
-            display: flex;
-            justify-content: center;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .button-container {
+            text-align: center;
             margin: 20px 0;
         }
         .pdf-button {
-            background-color: #ff5733;
-            color: white;
+            display: inline-block;
             padding: 10px 20px;
-            text-decoration: none;
             font-size: 16px;
-            font-weight: bold;
+            color: white;
+            background-color: #ff5733;
+            text-decoration: none;
             border-radius: 5px;
-            border: none;
-            cursor: pointer;
             transition: background-color 0.3s ease;
         }
         .pdf-button:hover {
-            background-color: #e04e2e;
+            background-color: #e63946;
         }
     </style>
 </head>
@@ -166,126 +133,118 @@
         <a href="#postres">Postres</a>
     </nav>
 
-    <div class="menu-section" id="tacos">
-        <h2>Tacos</h2>
-        <div class="menu-item">
-            <img src="img/taco3.jpg" alt="Taco de Carnita">
-            <div>
-                <h3>Carnitas</h3>
-                <p>Deliciosa carne de maciza, chamorro o cuero</p>
-                <p class="price">$18 MXN</p>
+    <section class="menu-grid">
+        <div class="menu-category">
+            <h2>Tacos</h2>
+            <div class="menu-item">
+                <img src="img/taco3.jpg" alt="Taco de Carnita">
+                <div>
+                    <h3>Carnitas <span>$18 MXN</span></h3>
+                    <p>Deliciosa carne de maciza, chamorro o cuero</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/taco2.PNG" alt="Taco de Pibil">
+                <div>
+                    <h3>Taco de pibil <span>$14 MXN</span></h3>
+                    <p>Ricos tacos de pibil.</p>
+                </div>
             </div>
         </div>
-        <div class="menu-item">
-            <img src="img/taco2.PNG" alt="Taco de Pibil">
-            <div>
-                <h3>Taco de pibil</h3>
-                <p>Ricos tacos de pibil.</p>
-                <p class="price">$14 MXN</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="menu-section" id="carnitas">
-        <h2>Pa Botanear</h2>
-        <div class="menu-item">
-            <img src="img/carnitas.jpg" alt="Carnitas">
-            <div>
-                <h3>kilo de carnitas</h3>
-                <p>Deliciosa carne de maciza, cuero y chamorro.</p>
-                <p class="price">$260 MXN</p>
+        <div class="menu-category">
+            <h2>Pa Botanear</h2>
+            <div class="menu-item">
+                <img src="img/carnitas.jpg" alt="Carnitas">
+                <div>
+                    <h3>Kilo de carnitas <span>$260 MXN</span></h3>
+                    <p>Deliciosa carne de maciza, cuero y chamorro.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="taco_al_pastor.jpg" alt="Medio Kilo de Carnitas">
+                <div>
+                    <h3>Medio kilo de carnitas <span>$160 MXN</span></h3>
+                    <p>Carne surtida con guarniciones.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="taco_al_pastor.jpg" alt="Chamorro">
+                <div>
+                    <h3>Chamorro entero <span>$140 MXN</span></h3>
+                    <p>Chamorro entero con sus guarniciones.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="taco_al_pastor.jpg" alt="Orden de Carnitas">
+                <div>
+                    <h3>Orden de tacos de carnitas <span>$65 MXN</span></h3>
+                    <p>Carne de maciza, cuero, chamorro o surtido.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="taco_al_pastor.jpg" alt="Orden de Pibil">
+                <div>
+                    <h3>Orden de tacos de pibil <span>$60 MXN</span></h3>
+                    <p>Orden de 5 tacos de pibil</p>
+                </div>
             </div>
         </div>
-        <div class="menu-item">
-            <img src="taco_al_pastor.jpg" alt="Medio Kilo de Carnitas">
-            <div>
-                <h3>medio kilo de carnitas</h3>
-                <p>Carne surtida con guarniciones.</p>
-                <p class="price">$160 MXN</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="taco_al_pastor.jpg" alt="Chamorro">
-            <div>
-                <h3>Chamorro entero</h3>
-                <p>Chamorro entero con sus guarniciones.</p>
-                <p class="price">$140 MXN</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="taco_al_pastor.jpg" alt="Orden de Carnitas">
-            <div>
-                <h3>Orden de tacos de carnitas</h3>
-                <p>Carne de maciza, cuero, chamorro o surtido.</p>
-                <p class="price">$65 MXN</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="taco_al_pastor.jpg" alt="Orden de Pibil">
-            <div>
-                <h3>Orden de tacos de pibil</h3>
-                <p>Orden de 5 tacos de pibil</p>
-                <p class="price">$60 MXN</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="menu-section" id="paquetes">
-        <h2>Pa que Compartas</h2>
-        <div class="menu-item">
-            <img src="taco.jpg" alt="Paquete 1">
-            <div>
-                <h3>Paquete 1</h3>
-                <p>Deliciosa carne asada con cebolla y cilantro.</p>
-                <li>1 Kg de Carnitas </li>
-                <li>1/4 de Chicharron </li>
-                <li>1/2 de Tortillas </li>
-                <li>1 Guacamole </li>
-                <li>1 Refresco de 2Lts </li>
-                <p class="price">$380 MXN</p>
+        <div class="menu-category">
+            <h2>Pa que Compartas</h2>
+            <div class="menu-item">
+                <img src="taco.jpg" alt="Paquete 1">
+                <div>
+                    <h3>Paquete 1 <span>$380 MXN</span></h3>
+                    <p>Deliciosa carne asada con cebolla y cilantro.</p>
+                    <ul>
+                        <li>1 Kg de Carnitas </li>
+                        <li>1/4 de Chicharron </li>
+                        <li>1/2 de Tortillas </li>
+                        <li>1 Guacamole </li>
+                        <li>1 Refresco de 2Lts </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="menu-section" id="bebidas">
-        <h2>Bebidas</h2>
-        <div class="menu-item">
-            <img src="img/agua.jpeg" alt="Agua Fresca">
-            <div>
-                <h3>Agua Fresca</h3>
-                <p>Sabor jamaica, limón o horchata.</p>
-                <p class="price">$25 MXN</p>
+        <div class="menu-category">
+            <h2>Bebidas</h2>
+            <div class="menu-item">
+                <img src="img/agua.jpeg" alt="Agua Fresca">
+                <div>
+                    <h3>Agua Fresca <span>$25 MXN</span></h3>
+                    <p>Sabor jamaica, limón o horchata.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/refrescos.jpg" alt="Refresco">
+                <div>
+                    <h3>Refrescos <span>$25 MXN</span></h3>
+                    <p>Variedad de refrescos nacionales.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/cerveza.jpg" alt="Cerveza">
+                <div>
+                    <h3>Cervezas <span>$25 MXN</span></h3>
+                    <p>Variedad de Cervezas nacionales.</p>
+                </div>
             </div>
         </div>
-        <div class="menu-item">
-            <img src="img/refrescos.jpg" alt="Refresco">
-            <div>
-                <h3>Refrescos</h3>
-                <p>Variedad de refrescos nacionales.</p>
-                <p class="price">$25 MXN</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <img src="img/cerveza.jpg" alt="Cerveza">
-            <div>
-                <h3>Cervezas</h3>
-                <p>Variedad de Cervezas nacionales.</p>
-                <p class="price">$25 MXN</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="menu-section" id="postres">
-        <h2>Postres</h2>
-        <div class="menu-item">
-            <img src="flan.jpg" alt="Flan Casero">
-            <div>
-                <h3>Flan Casero</h3>
-                <p>Flan con caramelo hecho en casa.</p>
-                <p class="price">$20 MXN</p>
+        <div class="menu-category">
+            <h2>Postres</h2>
+            <div class="menu-item">
+                <img src="flan.jpg" alt="Flan Casero">
+                <div>
+                    <h3>Flan Casero <span>$20 MXN</span></h3>
+                    <p>Flan con caramelo hecho en casa.</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
     <div class="button-container">
         <a href="Menú-Chamorron.pdf" target="_blank" class="pdf-button">Ver Menú en PDF</a>
     </div>
