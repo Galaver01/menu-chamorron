@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Digital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        header {
+            background-color: #e41c1c;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        header img {
+            max-width: 20%; /* Ajusta el tamaño máximo del logo */
+            height: auto;
+            animation: logoFadeIn 1s ease-in-out; /* Animación de entrada suave */
+        }
+        @keyframes logoFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ffc300;
+            padding: 10px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease; /* Transición suave al pasar el ratón */
+        }
+        nav a:hover {
+            color: #e41c1c;
+        }
+        .menu-section {
+            padding: 20px;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .menu-item img {
+            width: 150px;
+            height: 150px;
+            margin-right: 15px;
+            border-radius: 10px;
+            animation: imageFadeIn 0.5s ease-in-out; /* Animación de entrada suave para imágenes */
+        }
+        @keyframes imageFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .menu-item h3 {
+            margin: 0;
+        }
+        .menu-item p {
+            margin: 5px 0 0 0;
+        }
+        .menu-item .price {
+            font-weight: bold;
+            color: #d80606;
+        }
+
+        /* Estilos para dispositivos móviles */
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                margin: 10px 0;
+            }
+            .menu-item img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/SR..png" alt="Logo">
+        <h1>SR. CHAMORRON</h1>
+        <p>¡El mejor sabor en cada bocado!</p>
+    </header>
+
+    <nav>
+        <a href="#tacos">Tacos</a>
+        <a href="#carnitas">Carnitas</a>
+        <a href="#paquetes">Paquetes</a>
+        <a href="#bebidas">Bebidas</a>
+        <a href="#postres">Postres</a>
+    </nav>
+
+    <div class="menu-section" id="tacos">
+        <h2>Tacos</h2>
+        </div>
+</body>
+</html>

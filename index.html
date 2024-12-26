@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Digital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        header {
+            background-color: #e41c1c;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        header img {
+            max-width: 20%; /* Ajusta el tamaño máximo del logo */
+            height: auto;
+            animation: logoFadeIn 1s ease-in-out; /* Animación de entrada suave */
+        }
+        @keyframes logoFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ffc300;
+            padding: 10px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease; /* Transición suave al pasar el ratón */
+        }
+        nav a:hover {
+            color: #e41c1c;
+        }
+        .menu-section {
+            padding: 20px;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .menu-item img {
+            width: 150px;
+            height: 150px;
+            margin-right: 15px;
+            border-radius: 10px;
+            animation: imageFadeIn 0.5s ease-in-out; /* Animación de entrada suave para imágenes */
+        }
+        @keyframes imageFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .menu-item h3 {
+            margin: 0;
+        }
+        .menu-item p {
+            margin: 5px 0 0 0;
+        }
+        .menu-item .price {
+            font-weight: bold;
+            color: #d80606;
+        }
+
+        /* Estilos para dispositivos móviles */
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                margin: 10px 0;
+            }
+            .menu-item img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/SR..png" alt="Logo">
+        <h1>SR. CHAMORRON</h1>
+        <p>¡El mejor sabor en cada bocado!</p>
+    </header>
+
+    <nav>
+        <a href="#tacos">Tacos</a>
+        <a href="#carnitas">Carnitas</a>
+        <a href="#paquetes">Paquetes</a>
+        <a href="#bebidas">Bebidas</a>
+        <a href="#postres">Postres</a>
+    </nav>
+
+    <div class="menu-section" id="tacos">
+        <h2>Tacos</h2>
+        <div class="menu-item">
+            <img src="img/taco3.jpg" alt="Taco de Carnita">
+            <div>
+                <h3>Carnitas</h3>
+                <p>Deliciosa carne de macizo, chamorro o cuero</p>
+                <p class="price">$18 MXN</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="img/taco2.PNG" alt="Taco de Pibil">
+            <div>
+                <h3>Taco de pibil</h3>
+                <p>.</p>
+                <p class="price">$14 MXN</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-section" id="carnitas">
+        <h2>Pa Botanear</h2>
+        <div class="menu-item">
+            <img src="img/carnitas.jpg" alt="Carnitas">
+            <div>
+                <h3>kilo de carnitas</h3>
+                <p>Deliciosa carne asada con cebolla y cilantro.</p>
+                <p class="price">$260 MXN</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="taco_al_pastor.jpg" alt="Medio Kilo de Carnitas">
+            <div>
+                <h3>medio kilo de carnitas</h3>
+                <p>Carne al pastor con piña y salsa.</p>
+                <p class="price">$160 MXN</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="taco_al_pastor.jpg" alt="Chamorro">
+            <div>
+                <h3>chamorro entero</h3>
+                <p>Carne al pastor con piña y salsa.</p>
+                <p class="price">$130 MXN</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="taco_al_pastor.jpg" alt="Orden de Carnitas">
+            <div>
+                <h3>Orden de tacos de carnitas</h3>
+                <p>Carne al pastor con piña y salsa.</p>
+                <p class="price">$130 MXN</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="taco_al_pastor.jpg" alt="Orden de Pibil">
+            <div>
+                <h3>Orden de tacos de pibil</h3>
+                <p>Carne al pastor con piña y salsa.</p>
+                <p class="price">$130 MXN</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-section" id="paquetes">
+        <h2>Pa que Compartas</h2>
+        <div class="menu-item">
+            <img src="taco.jpg" alt="Paquete 1">
+            <div>
+                <h3>Paquete 1</h3>
+                <p>Deliciosa carne asada con cebolla y cilantro.</p>
+                <li>1 Kg de Carnitas </li>
+                <li>1/4 de Chicharron </li>
+                <li>1/2 de Tortillas </li>
+                <li>1 Guacamole </li>
+                <li>1 Refresco de 2Lts </li>
+                <p class="price">$380 MXN</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-section" id="bebidas">
+        <h2>Bebidas</h2>
+        <div class="menu-item">
+            <img src="img/agua.jpeg" alt="Agua Fresca">
+            <div>
+                <h3>Agua Fresca</h3>
+                <p>Sabor jamaica, limón o horchata.</p>
+                <p class="price">$25 MXN</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="img/refrescos.jpg" alt="Refresco">
+            <div>
+                <h3>Refrescos</h3>
+                <p>Sabor jamaica, limón o horchata.</p>
+                <p class="price">$25 MXN</p>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="img/cerveza.jpg" alt="Cerveza">
+            <div>
+                <h3>Cervezas</h3>
+                <p>Sabor jamaica, limón o horchata.</p>
+                <p class="price">$25 MXN</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-section" id="postres">
+        <h2>Postres</h2>
+        <div class="menu-item">
+            <img src="flan.jpg" alt="Flan Casero">
+            <div>
+                <h3>Flan Casero</h3>
+                <p>Flan con caramelo hecho en casa.</p>
+                <p class="price">$20 MXN</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
