@@ -89,6 +89,26 @@
                 height: 100px;
             }
         }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .pdf-button {
+            background-color: #ff5733;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .pdf-button:hover {
+            background-color: #e04e2e;
+        }
     </style>
 </head>
 <body>
@@ -226,6 +246,8 @@
             </div>
         </div>
     </div>
-    <button onclick="">Descargar PDF</button>
+    <div class="button-container">
+        <a href="Menú-Chamorron.pdf" target="_blank" class="pdf-button">Ver Menú en PDF</a>
+    </div>
 </body>
 </html>
