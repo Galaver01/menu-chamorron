@@ -30,17 +30,50 @@
         nav {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             background-color: #ffc300;
             padding: 10px 20px;
             width: 100%;
-            box-sizing: border-box;
-            flex-wrap: wrap;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        nav a {
-            margin: 5px;
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            color: #e63946;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .logo img {
+            height: 100px;
+            margin-right: 40px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
             text-decoration: none;
             color: #333;
             font-weight: bold;
+            transition: color 0.3s ease;
+            padding: 5px 10px;
+        }
+        .nav-links a:hover {
+            color: #e63946;
+        }
+        .active {
+            color: #e63946;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
         }
         .menu-grid {
             display: grid;
@@ -119,18 +152,20 @@
 </head>
 <body>
     <header>
-        <img src="img/SR..png" alt="Logo">
         <h1>SR. CHAMORRON</h1>
         <p>¡El mejor sabor en cada bocado!</p>
     </header>
 
     <nav>
-        <a href="#tacos">Tacos</a>
+        <a href="#" class="logo"><img src="img/SR..png" alt="Sr. Chamorron"></a>
+        <div class="nav-links">
+            <a href="#tacos">Tacos</a>
         <a href="#carnitas">Carnitas</a>
         <a href="#paquetes">Paquetes</a>
         <a href="#bebidas">Bebidas</a>
         <a href="#postres">Postres</a>
-    </nav>
+        </div>
+        </nav>
 
     <section class="menu-grid">
         <div class="menu-category">
