@@ -24,16 +24,51 @@
         }
         nav {
             display: flex;
-            justify-content: center;
-            background-color: #ffc300;
-            padding: 10px 0;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 10px 20px;
             width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        nav a {
-            margin: 0 15px;
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            color: #e63946;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
             text-decoration: none;
             color: #333;
             font-weight: bold;
+            transition: color 0.3s ease;
+            padding: 5px 10px;
+        }
+        .nav-links a:hover {
+            color: #e63946;
+        }
+        .active {
+            color: #e63946;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
         }
         .menu-grid {
             display: grid;
@@ -104,6 +139,15 @@
         .pdf-button:hover {
             background-color: #e63946;
         }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -113,9 +157,14 @@
     </header>
 
     <nav>
-        <a href="#tacos">Tacos</a>
-        <a href="#bebidas">Bebidas</a>
-        <a href="#postres">Postres</a>
+        <a href="#" class="logo"><img src="logo.png" alt="Café El Alba">CAFÉ EL ALBA</a>
+        <div class="nav-links">
+            <a href="#" class="active">Inicio</a>
+            <a href="#">Café El Alba</a>
+            <a href="#">Menú</a>
+            <a href="#">Galería</a>
+            <a href="#">Contacto</a>
+        </div>
     </nav>
 
     <section class="menu-grid">

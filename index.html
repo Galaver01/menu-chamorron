@@ -11,27 +11,22 @@
             padding: 0;
             background-color: #f8f8f8;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         header {
-            background-color: #e41c1c;
+            background-color: #ff5733;
             color: white;
             text-align: center;
             padding: 10px 0;
-        }
-        header img {
-            max-width: 20%; /* Ajusta el tamaño máximo del logo */
-            height: auto;
-            animation: logoFadeIn 1s ease-in-out; /* Animación de entrada suave */
-        }
-        @keyframes logoFadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            width: 100%;
         }
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #ffc300;
+            background-color: white;
             padding: 10px 20px;
             width: 100%;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -45,8 +40,8 @@
             text-decoration: none;
         }
         .logo img {
-            height: 100px;
-            margin-right: 40px;
+            height: 40px;
+            margin-right: 10px;
         }
         .nav-links {
             display: flex;
@@ -131,10 +126,6 @@
             text-align: center;
             margin: 20px 0;
         }
-        .button-container {
-            text-align: center;
-            margin: 20px 0;
-        }
         .pdf-button {
             display: inline-block;
             padding: 10px 20px;
@@ -148,24 +139,33 @@
         .pdf-button:hover {
             background-color: #e63946;
         }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>SR. CHAMORRON</h1>
+        <h1>Puesto de Comida El Sazón</h1>
         <p>¡El mejor sabor en cada bocado!</p>
     </header>
 
     <nav>
-        <a href="#" class="logo"><img src="img/SR..png" alt="Sr. Chamorron"></a>
+        <a href="#" class="logo"><img src="img/SR..png" alt="Sr Chamorron">SR CHAMORRON</a>
         <div class="nav-links">
-            <a href="#tacos">Tacos</a>
-        <a href="#carnitas">Carnitas</a>
-        <a href="#paquetes">Paquetes</a>
-        <a href="#bebidas">Bebidas</a>
-        <a href="#postres">Postres</a>
+            <a href="#" class="active">Inicio</a>
+            <a href="#">Sr Chamorron</a>
+            <a href="#">Menú</a>
+            <a href="#">Galería</a>
+            <a href="#">Contacto</a>
         </div>
-        </nav>
+    </nav>
 
     <section class="menu-grid">
         <div class="menu-category">
@@ -279,8 +279,9 @@
             </div>
         </div>
     </section>
+
     <div class="button-container">
-        <a href="Menú-Chamorron.pdf" target="_blank" class="pdf-button">Ver Menú en PDF</a>
+        <a href="menu.pdf" class="pdf-button" target="_blank">Ver Menú en PDF</a>
     </div>
 </body>
 </html>
