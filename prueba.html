@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sr. Chamorro</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Encabezado */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #c00808;
+            padding: 10px 20px;
+            color: #fff;
+        }
+
+        header img {
+            height: 100px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: yellow;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Contenido principal */
+        .hero {
+            position: relative;
+            text-align: center;
+        }
+
+        .hero video {
+            width: 100%;
+            height: auto;
+            opacity: 0.8;
+        }
+
+        .hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(5, 5, 5, 0.521);
+        }
+
+        .hero .overlay h1 {
+            color: yellow;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        /* Galería */
+        .galeria {
+            text-align: center;
+            background-color: red;
+            color: yellow;
+            padding: 20px;
+        }
+
+        .galeria img {
+            width: 30%;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: yellow;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="img/SR..png"Sr. Chamorro">
+    <nav>
+        <a href="#inicio">INICIO</a>
+        <a href="#menu">MENÚ</a>
+        <a href="#taquizas">TAQUIZAS</a>
+        <a href="#ordena">ORDENA</a>
+        <a href="#contacto">CONTACTO</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <video src="img/Video1.mp4" autoplay muted loop></video>
+    <div class="overlay">
+        <h1>¡Bienvenidos a Sr. Chamorro!</h1>
+    </div>
+</section>
+
+<section class="galeria" id="galeria">
+    <h2>GALERÍA</h2>
+    
+    <img src="img/taco2.PNG" alt="Taco 2">
+    
+</section>
+
+<footer>
+    <p>Dirección: Calle del Sabor #123, Ciudad Taquera</p>
+    <p>Teléfono: <a href="tel:+521234567890">+52 123 456 7890</a></p>
+    <p>Síguenos en nuestras redes sociales</p>
+</footer>
+
+</body>
+</html>

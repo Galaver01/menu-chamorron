@@ -1,287 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Digital</title>
+    <title>Sr. Chamorro</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            font-family: Arial, sans-serif;
         }
+
+        /* Encabezado */
         header {
-            background-color: #ff5733;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #c00808;
+            padding: 10px 20px;
+            color: #fff;
         }
+
+        header img {
+            height: 100px;
+        }
+
         nav {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: white;
-            padding: 10px 20px;
-            width: 100%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 1.5rem;
-            color: #e63946;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        .logo img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            transition: color 0.3s ease;
-            padding: 5px 10px;
-        }
-        .nav-links a:hover {
-            color: #e63946;
-        }
-        .active {
-            color: #e63946;
-        }
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-            }
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-        }
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            width: 100%;
-            max-width: 1200px;
-        }
-        .menu-category {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .menu-category h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-        .menu-item {
-            display: flex;
-            align-items: center;
             gap: 15px;
-            padding: 10px;
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .menu-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .menu-item img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-        .menu-item h3 {
-            margin: 0;
-            font-size: 1rem;
-            color: #222;
-        }
-        .menu-item h3 span {
-            float: right;
-            color: #e63946;
+
+        nav a {
+            color: yellow;
+            text-decoration: none;
             font-weight: bold;
         }
-        .menu-item p {
-            font-size: 0.9rem;
-            color: #555;
-            margin: 5px 0 0;
-        }
-        .button-container {
+
+        /* Contenido principal */
+        .hero {
+            position: relative;
             text-align: center;
-            margin: 20px 0;
         }
-        .pdf-button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background-color: #ff5733;
+
+        .hero video {
+            width: 100%;
+            height: auto;
+            opacity: 0.8;
+        }
+
+        .hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(5, 5, 5, 0.521);
+        }
+
+        .hero .overlay h1 {
+            color: yellow;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        /* Galería */
+        .galeria {
+            text-align: center;
+            background-color: red;
+            color: yellow;
+            padding: 20px;
+        }
+
+        .galeria img {
+            width: 30%;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: yellow;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .pdf-button:hover {
-            background-color: #e63946;
-        }
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav a {
-                margin: 10px 0;
-            }
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Puesto de Comida El Sazón</h1>
-        <p>¡El mejor sabor en cada bocado!</p>
-    </header>
 
+<header>
+    <img src="img/SR..png"Sr. Chamorro">
     <nav>
-        <a href="#" class="logo"><img src="img/SR..png" alt="Sr Chamorron">SR CHAMORRON</a>
-        <div class="nav-links">
-            <a href="#" class="active">Inicio</a>
-            <a href="#">Sr Chamorron</a>
-            <a href="#">Menú</a>
-            <a href="#">Galería</a>
-            <a href="#">Contacto</a>
-        </div>
+        <a href="#inicio">INICIO</a>
+        <a href="#menu">MENÚ</a>
+        <a href="#taquizas">TAQUIZAS</a>
+        <a href="#ordena">ORDENA</a>
+        <a href="#contacto">CONTACTO</a>
     </nav>
+</header>
 
-    <section class="menu-grid">
-        <div class="menu-category">
-            <h2>Tacos</h2>
-            <div class="menu-item">
-                <img src="img/taco3.jpg" alt="Taco de Carnita">
-                <div>
-                    <h3>Carnitas <span>$18 MXN</span></h3>
-                    <p>Deliciosa carne de maciza, chamorro o cuero</p>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="img/taco2.PNG" alt="Taco de Pibil">
-                <div>
-                    <h3>Taco de pibil <span>$14 MXN</span></h3>
-                    <p>Ricos tacos de pibil.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="menu-category">
-            <h2>Pa Botanear</h2>
-            <div class="menu-item">
-                <img src="img/carnitas.jpg" alt="Carnitas">
-                <div>
-                    <h3>Kilo de carnitas <span>$260 MXN</span></h3>
-                    <p>Deliciosa carne de maciza, cuero y chamorro.</p>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="taco_al_pastor.jpg" alt="Medio Kilo de Carnitas">
-                <div>
-                    <h3>Medio kilo de carnitas <span>$160 MXN</span></h3>
-                    <p>Carne surtida con guarniciones.</p>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="taco_al_pastor.jpg" alt="Chamorro">
-                <div>
-                    <h3>Chamorro entero <span>$140 MXN</span></h3>
-                    <p>Chamorro entero con sus guarniciones.</p>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="taco_al_pastor.jpg" alt="Orden de Carnitas">
-                <div>
-                    <h3>Orden de tacos de carnitas <span>$65 MXN</span></h3>
-                    <p>Carne de maciza, cuero, chamorro o surtido.</p>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="taco_al_pastor.jpg" alt="Orden de Pibil">
-                <div>
-                    <h3>Orden de tacos de pibil <span>$60 MXN</span></h3>
-                    <p>Orden de 5 tacos de pibil</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="menu-category">
-            <h2>Pa que Compartas</h2>
-            <div class="menu-item">
-                <img src="taco.jpg" alt="Paquete 1">
-                <div>
-                    <h3>Paquete 1 <span>$380 MXN</span></h3>
-                    <p>Deliciosa carne asada con cebolla y cilantro.</p>
-                    <ul>
-                        <li>1 Kg de Carnitas </li>
-                        <li>1/4 de Chicharron </li>
-                        <li>1/2 de Tortillas </li>
-                        <li>1 Guacamole </li>
-                        <li>1 Refresco de 2Lts </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="menu-category">
-            <h2>Bebidas</h2>
-            <div class="menu-item">
-                <img src="img/agua.jpeg" alt="Agua Fresca">
-                <div>
-                    <h3>Agua Fresca <span>$25 MXN</span></h3>
-                    <p>Sabor jamaica, limón o horchata.</p>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="img/refrescos.jpg" alt="Refresco">
-                <div>
-                    <h3>Refrescos <span>$25 MXN</span></h3>
-                    <p>Variedad de refrescos nacionales.</p>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="img/cerveza.jpg" alt="Cerveza">
-                <div>
-                    <h3>Cervezas <span>$25 MXN</span></h3>
-                    <p>Variedad de Cervezas nacionales.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="menu-category">
-            <h2>Postres</h2>
-            <div class="menu-item">
-                <img src="flan.jpg" alt="Flan Casero">
-                <div>
-                    <h3>Flan Casero <span>$20 MXN</span></h3>
-                    <p>Flan con caramelo hecho en casa.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="button-container">
-        <a href="Menú-Chamorron.pdf" class="pdf-button" target="_blank">Ver Menú en PDF</a>
+<section class="hero">
+    <video src="img/Video1.mp4" autoplay muted loop></video>
+    <div class="overlay">
+        <h1>¡Bienvenidos a Sr. Chamorro!</h1>
     </div>
+</section>
+
+<section class="galeria" id="galeria">
+    <h2>GALERÍA</h2>
+    
+    <img src="img/taco2.PNG" alt="Taco 2">
+    
+</section>
+
+<footer>
+    <p>Dirección: Calle del Sabor #123, Ciudad Taquera</p>
+    <p>Teléfono: <a href="tel:+521234567890">+52 123 456 7890</a></p>
+    <p>Síguenos en nuestras redes sociales</p>
+</footer>
+
 </body>
 </html>
